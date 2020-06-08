@@ -29,6 +29,11 @@ router.get('/users', async (req, body)=>{
     }
 } )
 
+router.get("/users/yo", function(req, res)  {
+    //render some page
+    res.send("Yo! This is the yo page!");
+});
+
 
 
 module.exports = router; 
