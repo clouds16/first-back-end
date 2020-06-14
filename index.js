@@ -1,6 +1,6 @@
 const  express = require('express');
 const User = require('./models/users');
-require('./db/mongoose')
+require('./db/mongoose');
 
 
 
@@ -12,6 +12,9 @@ app.use(express.json());
 let userRouter = require('./routers/users');
 app.use(userRouter);
 
+let userThreads = require('./routers/threads');
+app.use(userThreads);
+
 app.listen(port, ()=>{
     console.log(' Server on port: ' + port )
-})
+});

@@ -3,12 +3,15 @@ const router = new express.Router()
 const User = require('../models/users');
 const {readFile} = require('fs').promises;
 
-
-
 // router to open vanilla html home
 
 router.get('/home', async (req, res)=>{
     res.send( await readFile('./pages/home.html', 'utf8'));
+
+});
+
+router.get('/threads', async (req, res)=>{
+    res.send( await readFile('./pages/threads.html', 'utf8'));
 
 });
 
