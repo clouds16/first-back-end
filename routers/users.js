@@ -1,25 +1,25 @@
 const express = require('express')
 const router = new express.Router()
 const User = require('../models/users');
+const {readFile} = require('fs').promises;
 
 
 
-// Add new user 
+// router to open vanilla html home
 
-router.post('/users', async (req, res) => {
-     const user = new User(req.body)
+router.get('/home', async (req, res)=>{
+    res.send( await readFile('./pages/home.html', 'utf8'));
+
+});
 
 
-     try {
-         await user.save();
-         res.status(201).send(user)
-     } catch(e) {
-         res.status(400).send(e)
-     }
+// get users page html using vanilla
+
+router.get('/users', async (req, res)=> {
+    res.send( await readFile('./pages/create_user.html', 'utf8'));
 })
 
-//find user 
-
+// get all users
 router.get('/users', async (req, body)=>{
     try {
         const users = await User.find({});
@@ -33,6 +33,25 @@ router.get("/users/yo", function(req, res)  {
     //render some page
     res.send("Yo! This is the yo page!");
 });
+
+
+// Router to create new user 
+router.post('/users', async (req, res) => {
+     const user = new User(req.body);
+     
+     try {
+         await user.save();
+         res.status(201).send(user)
+     } catch(e) {
+         res.status(400).send(e)
+     }
+
+     console.log(user)
+})
+
+
+
+
 
 
 
