@@ -1,20 +1,28 @@
-const  express = require('express');
-const User = require('./models/users');
+const express = require('express'),
+    app = express(),
+    User = require('./models/users');
+    Blog = require("./models/blog");
+
 require('./db/mongoose');
 
-
-
-const  app = express();
+app.use(express.json());
 let port = process.env.PORT || 3000;
 
-app.use(express.json());
- 
+//requiring routes
+
+let userBlogs = require('./routers/blogs');
+app.use(userBlogs);
+//USER Routes
 let userRouter = require('./routers/users');
 app.use(userRouter);
 
-let userThreads = require('./routers/threads');
-app.use(userThreads);
+// //THREAD Routes
+// let userThreads = require('./routers/threads');
+// app.use(userThreads);
 
-app.listen(port, ()=>{
-    console.log(' Server on port: ' + port )
+// //BLOG ROUTES
+
+
+app.listen( port, () => {
+    console.log(' Server on port: ' + port)
 });

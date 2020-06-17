@@ -10,10 +10,10 @@ router.get('/home', async (req, res)=>{
 
 });
 
-router.get('/threads', async (req, res)=>{
-    res.send( await readFile('./pages/threads.html', 'utf8'));
+// router.get('/threads', async (req, res)=>{
+//     res.send( await readFile('./pages/threads.html', 'utf8'));
 
-});
+// });
 
 
 // get users page html using vanilla
