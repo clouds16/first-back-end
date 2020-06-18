@@ -15,24 +15,32 @@
 
     <h1>SHOW PAGE</h1>
     <br>
+
+    <div class="ui one column stackable center aligned page grid">
+        <div class="column twelve wide">
+            <a href="/blogs" class="ui floated basic black button">Home</a>
+        </div>
+    </div>
+
     <div class="ui main text container">
         <div class="huge ui header"><%= blog.title %> </div>
-        <div class="u i top segment attached">
+        <div class="ui top segment attached">
             <div class="item">
-                <img  class="ui centered rounded image" src="<%=blog.image%>">
-                <div class="content">				
+                <img class="ui centered rounded image" src="<%=blog.image%>">
+                <div class="content">
                     <span> <%= blog.created.toDateString() %> </span>
-                </div>	
+                </div>
                 <div class="description">
                     <p> <%= blog.body %> </p>
                 </div>
                 <a class="ui button basic red" href="/blogs/<%=blog._id%>/edit">Edit</a>
-                <form  id="delete" class="ui form" method="POST" action="/blogs/<%=blog._id%>?_method=DELETE">
-                <button class="ui basic button red ">Delete Post</button>
+                <form id="delete" class="ui form" method="POST" action="/blogs/<%=blog._id%>?_method=DELETE">
+                    <button class="ui basic button red ">Delete Post</button>
                 </form>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

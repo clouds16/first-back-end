@@ -17,16 +17,18 @@
     <h1>NEW PAGE</h1>
     <br>
 
+    <div class="ui one column stackable center aligned page grid">
+        <div class="column twelve wide">
+            <a href="/blogs" class="ui floated basic black button">Home</a>
+        </div>
+    </div>
+
     <div class="ui main text container segment">
         <div class="huge ui header">New Blog </div>
         <form class="ui form" action="/blogs" method="POST">
             <div class="field">
                 <label>Title</label>
                 <input type="text" name="title" placeholder="title">
-            </div>
-            <div class="field">
-                <label>Image</label>
-                <input type="text" name="image" placeholder="image">
             </div>
             <div class="field">
                 <label>Blog Content</label>
