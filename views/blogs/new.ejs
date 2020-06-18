@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoll Blogs New</title>
+
+    <!-- Include Semantic UI (Bootstrap alternativ) -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/stylesheets/app.css"> -->
+</head>
+
+<body>
+
+    <h1>NEW PAGE</h1>
+    <br>
+
+    <div class="ui main text container segment">
+        <div class="huge ui header">New Blog </div>
+        <form class="ui form" action="/blogs" method="POST">
+            <div class="field">
+                <label>Title</label>
+                <input type="text" name="title" placeholder="title">
+            </div>
+            <div class="field">
+                <label>Image</label>
+                <input type="text" name="image" placeholder="image">
+            </div>
+            <div class="field">
+                <label>Blog Content</label>
+                <textarea name="body"></textarea>
+            </div>
+            <input class="ui violet big basic button" type="submit">
+        </form>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoll Blogs New</title>
+
+    <!-- Include Semantic UI (Bootstrap alternativ) -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/stylesheets/app.css"> -->
+</head>
+
+<body>
+    <h1>INDEX PAGE</h1>
+
+    <br>
+
+    <div class="ui main text container">
+        <div class="ui huge header">SMOLL PP Blog App</div>
+        <div class="ui top attached segment">
+            <div class="ui divided items">
+                <% blogs.forEach(function(blog)	{ %>
+                <div class="item">
+                    <div class="content">
+                        <a class="header" href="/blogs/<%= blog._id %>"><%= blog.title %></a>
+                        <div class="meta">
+                            <span><%= blog.created.toDateString() %></span>
+                        </div>
+                        <div class="description">
+                            <p> <%- blog.body %> </p>
+                        </div>
+                        <div class="extra">
+                            <a class="ui floated basic violet button" href="blogs/<%= blog._id %>">
+                                Read More
+                                <i class="right chevron icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+
+    <div class="extra">
+        <a class="ui floated basic green button" href="blogs/new">
+            New Post
+        </a>
+    </div>
+
+</body>
+
+</html>

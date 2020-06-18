@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoll Blogs New</title>
+    <!-- Include Semantic UI (Bootstrap alternativ) -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/stylesheets/app.css"> -->
+</head>
+
+<body>
+
+    <h1>SHOW PAGE</h1>
+    <br>
+    <div class="ui main text container">
+        <div class="huge ui header"><%= blog.title %> </div>
+        <div class="u i top segment attached">
+            <div class="item">
+                <img  class="ui centered rounded image" src="<%=blog.image%>">
+                <div class="content">				
+                    <span> <%= blog.created.toDateString() %> </span>
+                </div>	
+                <div class="description">
+                    <p> <%= blog.body %> </p>
+                </div>
+                <a class="ui button basic red" href="/blogs/<%=blog._id%>/edit">Edit</a>
+                <form  id="delete" class="ui form" method="POST" action="/blogs/<%=blog._id%>?_method=DELETE">
+                <button class="ui basic button red ">Delete Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
